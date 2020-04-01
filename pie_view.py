@@ -21,9 +21,11 @@ labels = [data[0] for data in china_data]
 counts = [data[1] for data in china_data]
 
 c = (
-    Pie()
+    Pie(init_opts=opts.InitOpts(width='650px', height='600px'))
     .add("", [list(z) for z in zip(labels, counts)])
     .set_global_opts(title_opts=opts.TitleOpts(),
+                     legend_opts=opts.LegendOpts(orient="vertical", pos_top="15%", pos_left="85%"),
+
                      )
     .set_series_opts(label_opts=opts.LabelOpts(formatter="{b}: {c}"),
                      legend_opts=opts.LegendOpts(is_show=False),)
